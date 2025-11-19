@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import ContactForm from "../components/ContactForm";
 
 export default function CareersPage() {
     return (
@@ -139,6 +141,20 @@ export default function CareersPage() {
                             </div>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* Entry Form */}
+            <section id="entry" className="section">
+                <div className="container">
+                    <div className="text-center" style={{ marginBottom: "4rem" }}>
+                        <h2 className="text-accent" style={{ marginBottom: "1rem" }}>Entry</h2>
+                        <p style={{ fontSize: "1.2rem", color: "var(--gray-medium)" }}>
+                            まずはカジュアルにお話ししましょう。<br />
+                            下記フォームよりエントリーをお願いします。
+                        </p>
+                    </div>
+                    <ContactForm />
                 </div>
             </section>
 

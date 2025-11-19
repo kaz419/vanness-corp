@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
     return (
@@ -182,52 +183,20 @@ export default function Home() {
                 </div>
             </section>
 
+            import ContactForm from "./components/ContactForm";
+
+            // ...
+
             {/* Contact / Footer */}
             <section id="contact" className="section" style={{ background: "var(--navy-dark)" }}>
                 <div className="container">
-                    <div className="grid grid-cols-2" style={{ gap: "5rem" }}>
-                        <div>
-                            <h2>Contact</h2>
-                            <p style={{ fontSize: "1.1rem", marginBottom: "3rem" }}>事業成長に関するご相談、採用への応募など、お気軽にお問い合わせください。</p>
-
-                            <div style={{ padding: "2rem", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "16px" }}>
-                                <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>VanNess株式会社</h3>
-                                <p style={{ fontSize: "0.95rem", lineHeight: 2 }}>
-                                    〒107-0062<br />
-                                    東京都港区南青山3-1-36 青山丸竹ビル6F<br /><br />
-                                    事業内容：営業コンサルティング、動画制作、AIソリューション事業
-                                </p>
-                            </div>
-                        </div>
-
-                        <form className="card" style={{ padding: "3rem" }}>
-                            <div style={{ marginBottom: "1.5rem" }}>
-                                <label style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.9rem", fontWeight: "bold" }}>会社名</label>
-                                <input type="text" style={{ width: "100%", padding: "1rem", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.05)", color: "white" }} />
-                            </div>
-                            <div style={{ marginBottom: "1.5rem" }}>
-                                <label style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.9rem", fontWeight: "bold" }}>お名前</label>
-                                <input type="text" style={{ width: "100%", padding: "1rem", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.05)", color: "white" }} />
-                            </div>
-                            <div style={{ marginBottom: "1.5rem" }}>
-                                <label style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.9rem", fontWeight: "bold" }}>メールアドレス</label>
-                                <input type="email" style={{ width: "100%", padding: "1rem", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.05)", color: "white" }} />
-                            </div>
-                            <div style={{ marginBottom: "2rem" }}>
-                                <label style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.9rem", fontWeight: "bold" }}>ご相談内容</label>
-                                <select style={{ width: "100%", padding: "1rem", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.05)", color: "white" }}>
-                                    <option>営業強化・コンサルティングについて</option>
-                                    <option>動画制作について</option>
-                                    <option>AI導入・研修について</option>
-                                    <option>採用支援について</option>
-                                    <option>プロダクト「KOETE」について</option>
-                                    <option>協業・パートナーについて</option>
-                                    <option>採用への応募（求職者様）</option>
-                                </select>
-                            </div>
-                            <button type="button" className="btn btn-primary" style={{ width: "100%" }}>送信する</button>
-                        </form>
+                    <div className="text-center" style={{ marginBottom: "4rem" }}>
+                        <h2 className="text-accent" style={{ marginBottom: "1rem" }}>Contact</h2>
+                        <p style={{ fontSize: "1.2rem", color: "var(--gray-medium)" }}>
+                            事業に関するご相談・ご質問など、<br />お気軽にお問い合わせください。
+                        </p>
                     </div>
+                    <ContactForm />
                     <div style={{ textAlign: "center", marginTop: "6rem", borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "4rem" }}>
                         <div style={{ marginBottom: "2rem" }}>
                             <Image

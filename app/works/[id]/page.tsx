@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { WORKS } from "../page";
 
+export async function generateStaticParams() {
+    return WORKS.map((work) => ({
+        id: work.id,
+    }));
+}
+
 export default async function WorkDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
     const work = WORKS.find((w) => w.id === id);
