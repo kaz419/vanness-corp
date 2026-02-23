@@ -1,5 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "事業内容 - 6つのプロフェッショナルサービス",
+    description: "営業コンサルティング、動画制作、KOETE、AI研修、AI導入支援、採用支援。VanNessが提供する6つの事業で、企業の成長課題を解決します。",
+    openGraph: {
+        title: "事業内容 | VanNess株式会社",
+        description: "営業コンサルティングからAI導入支援まで、6つの事業で企業の進化を支えます。",
+    },
+};
 
 export default function ServicesPage() {
     const services = [

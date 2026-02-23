@@ -106,6 +106,7 @@ p {
 
 .text-accent {
     background: var(--gradient-accent);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -116,6 +117,26 @@ select option {
     background-color: var(--navy);
     color: var(--white);
 }
+
+input,
+textarea {
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--cyan) !important;
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(10px);
+    border: var(--glass-border);
+    border-radius: 24px;
+}
+
 
 .text-center {
     text-align: center;
@@ -157,6 +178,26 @@ select option {
     cursor: pointer;
     font-size: 1rem;
     letter-spacing: 0.05em;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
 }
 
 .btn-primary {
@@ -167,20 +208,21 @@ select option {
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.6);
 }
 
 .btn-outline {
-    border: 1px solid var(--cyan);
+    border: 2px solid var(--cyan);
     color: var(--cyan);
     background: transparent;
 }
 
 .btn-outline:hover {
-    background: rgba(6, 182, 212, 0.1);
+    background: rgba(6, 182, 212, 0.15);
     color: var(--white);
     border-color: var(--white);
+    transform: translateY(-2px);
 }
 
 .card {
@@ -190,12 +232,30 @@ select option {
     padding: 2.5rem;
     border-radius: 16px;
     transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.card:hover::before {
+    left: 100%;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
     border-color: var(--cyan);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 40px rgba(6, 182, 212, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Animations */
@@ -211,8 +271,123 @@ select option {
     }
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.2); }
+    50% { box-shadow: 0 0 40px rgba(6, 182, 212, 0.4); }
+}
+
+@keyframes slide-in-left {
+    from { opacity: 0; transform: translateX(-60px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(60px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
 .animate-fade-in {
     animation: fadeIn 0.8s ease forwards;
+}
+
+/* Scroll-triggered fade-in utility */
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animated gradient background */
+.gradient-animated {
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
 }
 
 /* Responsive */
@@ -313,6 +488,20 @@ select option {
     .hero {
         min-height: auto;
         padding: 120px 0 80px;
+    }
+}
+
+/* Numbers strip responsive */
+@media (max-width: 768px) {
+    .numbers-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Footer responsive */
+@media (max-width: 768px) {
+    footer > div:first-child {
+        grid-template-columns: 1fr !important;
     }
 }
 

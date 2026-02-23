@@ -46,8 +46,8 @@ export default function ContactForm() {
     return (
         <div className="glass-card" style={{ padding: "3rem", maxWidth: "800px", margin: "0 auto" }}>
             {status === "success" ? (
-                <div style={{ textAlign: "center", padding: "3rem 0" }}>
-                    <div style={{ fontSize: "4rem", marginBottom: "1rem" }}>✅</div>
+                <div className="scroll-fade-in visible" style={{ textAlign: "center", padding: "3rem 0" }}>
+                    <div style={{ fontSize: "4rem", marginBottom: "1rem", animation: "fadeIn 0.6s ease" }}>✅</div>
                     <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "var(--white)" }}>送信完了</h3>
                     <p style={{ color: "var(--gray-medium)" }}>
                         お問い合わせありがとうございます。<br />
@@ -171,10 +171,30 @@ export default function ContactForm() {
                                 cursor: status === "submitting" ? "wait" : "pointer"
                             }}
                         >
-                            {status === "submitting" ? "送信中..." : "送信する"}
+                            {status === "submitting" ? (
+                                <span style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
+                                    <span className="spinner" style={{
+                                        display: "inline-block",
+                                        width: "16px",
+                                        height: "16px",
+                                        border: "2px solid rgba(255,255,255,0.3)",
+                                        borderTopColor: "white",
+                                        borderRadius: "50%",
+                                        animation: "spin 0.8s linear infinite"
+                                    }}></span>
+                                    送信中...
+                                </span>
+                            ) : "送信する"}
                         </button>
                         {status === "error" && (
-                            <p style={{ color: "#ff4444", marginTop: "1rem" }}>
+                            <p style={{
+                                color: "#ff6b6b",
+                                marginTop: "1rem",
+                                padding: "1rem",
+                                background: "rgba(255, 107, 107, 0.1)",
+                                borderRadius: "8px",
+                                border: "1px solid rgba(255, 107, 107, 0.3)"
+                            }}>
                                 送信に失敗しました。時間をおいて再度お試しください。
                             </p>
                         )}

@@ -1,6 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "../components/ContactForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "採用情報 - 一緒に働く仲間を募集中",
+    description: "VanNess株式会社の採用情報。AI × 営業 × 採用の領域で、企業成長を支援するプロフェッショナルを募集しています。",
+    openGraph: {
+        title: "採用情報 | VanNess株式会社",
+        description: "VanNessで一緒に企業成長を支援しませんか？各職種の募集要項をご覧ください。",
+    },
+};
 
 export default function CareersPage() {
     return (

@@ -1,4 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "会社概要",
+    description: "VanNess株式会社の会社概要。AI × 営業 × 採用で企業成長の壁を突破する、プロフェッショナルファームです。",
+    openGraph: {
+        title: "会社概要 | VanNess株式会社",
+        description: "VanNess株式会社の企業情報をご紹介します。",
+    },
+};
 
 export default function CompanyPage() {
     return (
