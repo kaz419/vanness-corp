@@ -54,10 +54,10 @@ export default function Header() {
 
                 {/* Navigation */}
                 <nav className={`nav-menu ${isOpen ? 'open' : ''}`}>
-                    {["Service", "Works", "Recruitment", "Company"].map((item) => (
+                    {["Service", "Works", "News", "Recruitment", "Company"].map((item) => (
                         <Link
                             key={item}
-                            href={`/${item.toLowerCase() === 'recruitment' ? 'careers' : item.toLowerCase() === 'service' ? 'services' : item.toLowerCase()}`}
+                            href={`/${item.toLowerCase() === 'recruitment' ? 'careers' : item.toLowerCase() === 'service' ? 'services' : item.toLowerCase() === 'news' ? 'news' : item.toLowerCase()}`}
                             className="nav-link"
                             onClick={() => setIsOpen(false)}
                         >

@@ -47,9 +47,20 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://vanness.co.jp",
     },
+    icons: {
+        icon: [
+            { url: "/favicon.ico" },
+        ],
+        apple: [
+            { url: "/apple-touch-icon.png", sizes: "180x180" },
+        ],
+    },
 };
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import GoogleAnalytics from "./components/GoogleAnalytics";
+import CookieBanner from "./components/CookieBanner";
 
 export default function RootLayout({
     children,
@@ -79,8 +90,11 @@ export default function RootLayout({
                 />
             </head>
             <body className={notoSansJP.className}>
+                <GoogleAnalytics />
                 <Header />
                 {children}
+                <Footer />
+                <CookieBanner />
             </body>
         </html>
     );
