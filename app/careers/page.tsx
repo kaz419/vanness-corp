@@ -104,7 +104,7 @@ export default function CareersPage() {
                             {
                                 title: "Product Manager (PdM)",
                                 subtitle: "自社プロダクト「KOETE」を育てる",
-                                desc: "営業トーク解析AI「KOETE」の企画・開発ディレクション。ユーザーヒアリングから要件定義、ロードマップ策定まで担います。",
+                                desc: "多言語ビジネスコミュニケーションツール「KOETE」の企画・開発ディレクション。ユーザーヒアリングから要件定義、ロードマップ策定まで担います。",
                                 requirements: [
                                     "Webサービス・アプリのPM / PdM経験",
                                     "エンジニア・デザイナーとの協業経験",

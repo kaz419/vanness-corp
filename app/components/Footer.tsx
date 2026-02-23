@@ -31,10 +31,23 @@ export default function Footer() {
                     <div>
                         <h4 style={{ fontSize: "0.85rem", color: "var(--cyan)", marginBottom: "1rem", letterSpacing: "0.1em" }}>SERVICE</h4>
                         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                            {["営業コンサルティング", "動画制作", "KOETE", "AI研修", "AI導入支援", "採用支援"].map((s) => (
-                                <Link key={s} href="/services" style={{ color: "var(--gray-medium)", textDecoration: "none", fontSize: "0.85rem", transition: "color 0.2s" }}>
-                                    {s}
-                                </Link>
+                            {[
+                                { label: "営業コンサルティング", href: "/services#sales" },
+                                { label: "動画制作", href: "/services#video" },
+                                { label: "KOETE", href: "https://koete.ai/", external: true },
+                                { label: "AI研修", href: "/services#ai-training" },
+                                { label: "AI導入支援", href: "/services#ai-support" },
+                                { label: "採用支援", href: "/services#recruitment" },
+                            ].map((s) => (
+                                s.external ? (
+                                    <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{ color: "var(--gray-medium)", textDecoration: "none", fontSize: "0.85rem", transition: "color 0.2s" }}>
+                                        {s.label} ↗
+                                    </a>
+                                ) : (
+                                    <Link key={s.label} href={s.href} style={{ color: "var(--gray-medium)", textDecoration: "none", fontSize: "0.85rem", transition: "color 0.2s" }}>
+                                        {s.label}
+                                    </Link>
+                                )
                             ))}
                         </div>
                     </div>
@@ -62,9 +75,15 @@ export default function Footer() {
                     color: "var(--gray-medium)",
                     fontSize: "0.8rem",
                 }}>
-                    <div style={{ marginBottom: "0.75rem" }}>
+                    <div style={{ marginBottom: "0.75rem", display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap" }}>
                         <Link href="/privacy" style={{ color: "var(--gray-medium)", textDecoration: "none", fontSize: "0.8rem", transition: "color 0.2s" }}>
                             プライバシーポリシー
+                        </Link>
+                        <Link href="/legal" style={{ color: "var(--gray-medium)", textDecoration: "none", fontSize: "0.8rem", transition: "color 0.2s" }}>
+                            特定商取引法に基づく表記
+                        </Link>
+                        <Link href="/security" style={{ color: "var(--gray-medium)", textDecoration: "none", fontSize: "0.8rem", transition: "color 0.2s" }}>
+                            情報セキュリティ方針
                         </Link>
                     </div>
                     &copy; {new Date().getFullYear()} VanNess Inc. All Rights Reserved.

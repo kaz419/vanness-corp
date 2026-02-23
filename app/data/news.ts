@@ -12,6 +12,13 @@ export interface NewsItem {
 // CMS移行時はここをAPI取得に差し替えるだけでOK
 export const newsItems: NewsItem[] = [
     {
+        id: "2025-03-koete-launch",
+        date: "2025-03-01",
+        category: "プレスリリース",
+        title: "多言語ビジネスコミュニケーションツール「KOETE」を正式リリース",
+        summary: "7言語対応のAI翻訳機能を搭載した多言語ビジネスコミュニケーションツール「KOETE」を正式リリースしました。製造・建設・介護・物流など多国籍スタッフを抱える現場の報連相を一元化します。",
+    },
+    {
         id: "2025-02-launch",
         date: "2025-02-23",
         category: "お知らせ",

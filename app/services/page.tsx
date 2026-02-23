@@ -12,7 +12,15 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-    const services = [
+    const services: Array<{
+        id: string;
+        title: string;
+        subtitle: string;
+        desc: string;
+        image: string;
+        externalUrl?: string;
+        features: Array<{ title: string; desc: string }>;
+    }> = [
         {
             id: "sales",
             title: "営業コンサルティング",
@@ -39,9 +47,10 @@ export default function ServicesPage() {
         },
         {
             id: "koete",
-            title: "KOETE（リリース準備中）",
+            title: "KOETE",
             subtitle: "言語の壁をなくし、現場の報・連・相を一元化する。",
-            desc: "多国籍スタッフを抱える現場向けの「AI翻訳 × 日報 × 勤怠 × トラブル管理」統合プラットフォーム。外国人スタッフは母国語で入力し、管理者は自国語で確認できるため、言語の壁をなくし、現場の報・連・相を一元化します。",
+            desc: "多国籍スタッフを抱える現場向けの「AI翻訳 × 日報 × 勤怠 × トラブル管理」統合プラットフォーム。7言語対応のAI翻訳で、外国人スタッフは母国語で入力し、管理者は自国語で即時確認。「1課題1スレッド」の構造化されたコミュニケーションで、現場の報・連・相を一元化します。",
+            externalUrl: "https://koete.ai/",
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
             features: [
                 { title: "AI翻訳（マイナー言語対応）", desc: "外国人スタッフが母国語で入力し、管理者は自国語で即時確認。コピペ不要で誤解を防止します。" },
@@ -137,6 +146,11 @@ export default function ServicesPage() {
                                     <p style={{ lineHeight: 1.8, color: "var(--gray-medium)" }}>
                                         {service.desc}
                                     </p>
+                                    {service.externalUrl && (
+                                        <a href={service.externalUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ marginTop: "1.5rem", display: "inline-block" }}>
+                                            KOETE 公式サイトへ →
+                                        </a>
+                                    )}
                                 </div>
                             </div>
 

@@ -196,13 +196,13 @@ export default function Home() {
                         {[
                             { id: "sales", title: "営業コンサルティング", desc: "科学的アプローチで、勝てる営業組織へ。", detail: "インサイドセールスの立ち上げからKPI設計、トークスクリプト開発まで。属人化を排除し、売れる仕組みを構築します。", icon: "📈" },
                             { id: "video", title: "動画制作", desc: "心を動かし、行動を変えるクリエイティブ。", detail: "採用動画、サービス紹介、会社紹介など。企画・撮影・編集をワンストップで提供し、マーケティング成果に直結させます。", icon: "🎥" },
-                            { id: "koete", title: "KOETE（リリース準備中）", desc: "言語の壁をなくし、現場の報・連・相を一元化する。", detail: "多国籍スタッフ向け「AI翻訳×日報×勤怠×トラブル管理」プラットフォーム。母国語入力・自国語確認で、現場管理の課題を解決します。", icon: "🌏" },
+                            { id: "koete", title: "KOETE", desc: "言語の壁をなくし、現場の報・連・相を一元化する。", detail: "多国籍スタッフ向け「AI翻訳×日報×勤怠×トラブル管理」プラットフォーム。母国語入力・自国語確認で、現場管理の課題を解決します。", icon: "🌏", external: "https://koete.ai/" },
                             { id: "ai-training", title: "AI研修", desc: "全メンバーがAIを使いこなす組織へ。", detail: "ChatGPT活用から業務改革ワークショップまで。職種別（営業・開発・事務）の実践的カリキュラムで、組織の生産性を底上げします。", icon: "🎓" },
                             { id: "ai-support", title: "AI導入支援", desc: "実務に定着する、真のDXパートナー。", detail: "業務棚卸し、要件定義、PoC、プロンプトエンジニアリングまで。導入で終わらせず、現場に定着するまで伴走します。", icon: "⚙️" },
                             { id: "recruitment", title: "採用支援", desc: "事業成長を加速させる、攻めの採用戦略。", detail: "採用ブランディング、サイト制作、動画活用による母集団形成、選考プロセス改善まで。欲しい人材を逃さない採用フローを設計します。", icon: "🤝" }
-                        ].map((service, index) => (
+                        ].map((service: { id: string; title: string; desc: string; detail: string; icon: string; external?: string }, index: number) => (
                             <ScrollFadeIn key={index} delay={index * 80} direction={index % 2 === 0 ? 'up' : 'scale'}>
-                                <GlowCard href={`/services#${service.id}`}>
+                                <GlowCard href={service.external || `/services#${service.id}`}>
                                     <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>{service.icon}</div>
                                     <h3 style={{ color: "var(--white)", marginBottom: "0.5rem" }}>{service.title}</h3>
                                     <p style={{ color: "var(--cyan)", fontWeight: "bold", marginBottom: "1rem", fontSize: "0.95rem" }}>{service.desc}</p>
