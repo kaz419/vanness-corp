@@ -47,6 +47,9 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://vanness.co.jp",
     },
+    verification: {
+        google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || "",
+    },
     icons: {
         icon: [
             { url: "/favicon.ico" },
@@ -61,6 +64,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import CookieBanner from "./components/CookieBanner";
+import MicrosoftClarity from "./components/MicrosoftClarity";
 
 export default function RootLayout({
     children,
@@ -91,6 +95,7 @@ export default function RootLayout({
             </head>
             <body className={notoSansJP.className}>
                 <GoogleAnalytics />
+                <MicrosoftClarity />
                 <Header />
                 {children}
                 <Footer />
