@@ -144,16 +144,17 @@ export default function PrivacyPage() {
                     background: "rgba(6, 182, 212, 0.05)",
                     border: "1px solid rgba(6, 182, 212, 0.15)",
                     borderRadius: "12px",
-                    padding: "2rem",
+                    padding: "2.5rem 2rem",
+                    textAlign: "center" as const,
                 }}>
-                    <h2 style={{ ...headingStyle, borderBottom: "none", paddingBottom: 0 }}>10. お問い合わせ窓口</h2>
-                    <p style={textStyle}>
+                    <h2 style={{ ...headingStyle, borderBottom: "none", paddingBottom: 0, textAlign: "center" as const }}>10. お問い合わせ窓口</h2>
+                    <p style={{ ...textStyle, marginBottom: "1.5rem" }}>
                         個人情報の取扱いに関するお問い合わせは、下記までご連絡ください。
                     </p>
-                    <div style={{ ...textStyle, marginTop: "1rem" }}>
-                        <p><strong style={{ color: "var(--white)" }}>VanNess株式会社</strong></p>
-                        <p>メール: info@vanness.co.jp</p>
-                    </div>
+                    <p style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--white)", marginBottom: "0.5rem" }}>VanNess株式会社</p>
+                    <p style={{ fontSize: "0.95rem", color: "var(--gray-light)" }}>
+                        メール: <a href="mailto:info@vanness.co.jp" style={{ color: "var(--cyan)", textDecoration: "none" }}>info@vanness.co.jp</a>
+                    </p>
                 </div>
             </div>
         </main>

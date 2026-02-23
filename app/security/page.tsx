@@ -101,11 +101,12 @@ export default function SecurityPage() {
                     background: "rgba(6, 182, 212, 0.05)",
                     border: "1px solid rgba(6, 182, 212, 0.15)",
                     borderRadius: "12px",
-                    padding: "2rem",
-                    textAlign: "right" as const,
+                    padding: "2.5rem 2rem",
+                    textAlign: "center" as const,
                 }}>
-                    <p style={{ ...textStyle, marginBottom: "0.5rem" }}>VanNess株式会社</p>
-                    <p style={{ ...textStyle, fontWeight: 600, color: "var(--white)" }}>代表取締役 宮崎 和樹</p>
+                    <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", marginBottom: "1.5rem" }}>制定日: 2025年1月5日</p>
+                    <p style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--white)", marginBottom: "0.5rem" }}>VanNess株式会社</p>
+                    <p style={{ fontSize: "0.95rem", color: "var(--gray-light)" }}>代表取締役 宮崎 和樹</p>
                 </div>
             </div>
         </main>
