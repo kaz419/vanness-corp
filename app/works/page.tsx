@@ -38,7 +38,7 @@ export const WORKS = [
         id: "ai-realestate",
         title: "AIによる商談解析で成約率を大幅改善",
         client: "大手SIer",
-        image: "/images/sier-meeting.png",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
         desc: "商談の録音・解析データを基に、生成AIが提案書の約7割を自動作成。さらにAIとの対話を通じて論理構成を練り上げることで、説得力のある提案書を効率的に作成し、受注率と単価の向上を実現しました。",
         challenges: [
             "提案書作成に膨大な時間がかかり、営業活動の時間を圧迫",
